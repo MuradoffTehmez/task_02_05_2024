@@ -1,52 +1,52 @@
-# Task 1
-def get_sorted_list():
-    user_list = []
-    for i in range(1, 6):
-        user_input = int(input(f"{i}. sayıyı girin: "))
-        user_list.append(user_input)
-    sorted_list = sorted(user_list)
-    print(f"Sıralı liste: {sorted_list}")
+# Tapşırıq 1: Sıralı Siyahı
+def siyahi_duzelt():
+   istifadeci_siyahisi = []
+   for i in range(1, 6):
+       istifadeci_daxili = int(input(f"{i}. ədədi daxil edin: "))
+       istifadeci_siyahisi.append(istifadeci_daxili)
+   siralanmis_siyahi = sorted(istifadeci_siyahisi)
+   print(f"Sıralanmış siyahı: {siralanmis_siyahi}")
 
-# Task 2
-def sort_words():
-    sentence = input("Cümleyi girin: ").strip()
-    sorted_words = " ".join(["".join(sorted(word)) for word in sentence.split()])
-    print(f"Alfabetik sıralı kelimeler: {sorted_words}")
+# Tapşırıq 2: Sözləri Əlifba Sırasına Düzmə
+def sozleri_sirala():
+   cumle = input("Cümləni daxil edin: ").strip()
+   siralanmis_sozler = " ".join(["".join(sorted(soz)) for soz in cumle.split()])
+   print(f"Əlifba sırasına görə sözlər: {siralanmis_sozler}")
 
-# Task 3
-def guess_number():
-    target_number = 13
-    attempts = []
-    while True:
-        guess = int(input("Sayıyı tahmin edin: "))
-        attempts.append(guess)
-        if guess == target_number:
-            num_attempts = len(attempts)
-            print(f"\nTebrikler! {num_attempts} denemede sayıyı buldunuz.")
-            for i, attempt in enumerate(attempts, start=1):
-                print(f"{i}. deneme: {attempt}")
-            break
+# Tapşırıq 3: Ədəd Tapmaq Oyunu
+def ededi_tap():
+   hedefe_eded = 13
+   cehdler = []
+   while True:
+       tehmin = int(input("Ədədi təxmin edin: "))
+       cehdler.append(tehmin)
+       if tehmin == hedefe_eded:
+           cehd_sayi = len(cehdler)
+           print(f"\nTəbriklər! {cehd_sayi} cəhddə ədədi tapdınız.")
+           for i, cehd in enumerate(cehdler, start=1):
+               print(f"{i}. cəhd: {cehd}")
+           break
 
-# Task 4
-def print_prime_numbers():
-    prime_numbers = []
-    for num in range(1, 101):
-        if all(num % i != 0 for i in range(2, int(num ** 0.5) + 1)):
-            prime_numbers.append(num)
-    print(f"Asal sayılar: {prime_numbers}")
+# Tapşırıq 4: Sadə Ədədlər
+def sade_ededleri_cixart():
+   sade_ededler = []
+   for eded in range(1, 101):
+       if all(eded % i != 0 for i in range(2, int(eded ** 0.5) + 1)):
+           sade_ededler.append(eded)
+   print(f"Sadə ədədlər: {sade_ededler}")
 
-#
+# Ana Proqram
 while True:
-    task_choice = input("Görev numarasını girin (1-4) veya çıkmak için 'q' tuşuna basın: ")
-    if task_choice == '1':
-        get_sorted_list()
-    elif task_choice == '2':
-        sort_words()
-    elif task_choice == '3':
-        guess_number()
-    elif task_choice == '4':
-        print_prime_numbers()
-    elif task_choice.lower() == 'q':
-        break
-    else:
-        print("Geçersiz bir seçim yaptınız. Lütfen tekrar deneyin.")
+   tapsirig_secimi = input("Tapşırıq nömrəsini daxil edin (1-4) və ya çıxmaq üçün 'q' düyməsini basın: ")
+   if tapsirig_secimi == '1':
+       siyahi_duzelt()
+   elif tapsirig_secimi == '2':
+       sozleri_sirala()
+   elif tapsirig_secimi == '3':
+       ededi_tap()
+   elif tapsirig_secimi == '4':
+       sade_ededleri_cixart()
+   elif tapsirig_secimi.lower() == 'q':
+       break
+   else:
+       print("Yanlış bir seçim etdiniz. Zəhmət olmasa yenidən cəhd edin.")
